@@ -98,8 +98,9 @@ export const HowItWorks = () => {
                 <h4 className="text-sm font-medium text-primary mb-3">
                   After: Just Your Code
                 </h4>
-                <div className="bg-primary/10 p-4 rounded-lg text-sm font-mono">
-                  <pre className="text-primary">
+
+                <div className="bg-primary/10 p-4 rounded-lg text-sm font-mono overflow-x-auto">
+                  <pre className="text-primary whitespace-pre-wrap break-words">
                     {`@cycls.agent
 def sentiment_analyzer(text):
     return analyze_sentiment(text)

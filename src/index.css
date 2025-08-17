@@ -164,7 +164,7 @@
 
   /* Layout Utilities */
   .section-padding {
-    @apply px-6 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24;
+    @apply px-6 sm:px-8 lg:px-12 py-[5.5rem] sm:py-20 lg:py-24;
   }
 
   .container-custom {

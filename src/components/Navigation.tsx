@@ -4,12 +4,12 @@ import { useState } from "react";
 
 export const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  
+
   const navigation = [
     { name: "Developers", href: "#developers" },
     { name: "Enterprise", href: "#enterprise" },
     { name: "Docs", href: "#docs" },
-    { name: "Pricing", href: "#pricing" }
+    { name: "Pricing", href: "#pricing" },
   ];
 
   return (
@@ -23,11 +23,11 @@ export const Navigation = () => {
             </div>
             <span className="text-xl font-bold text-gradient">Cycls</span>
           </div>
-          
+
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navigation.map((item) => (
-              <a 
+              <a
                 key={item.name}
                 href={item.href}
                 className="text-muted-foreground hover:text-foreground transition-colors"
@@ -36,27 +36,32 @@ export const Navigation = () => {
               </a>
             ))}
           </div>
-          
+
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center gap-4">
-            <Button variant="ghost" className="text-muted-foreground hover:text-foreground">
+            <Button
+              variant="ghost"
+              className="text-muted-foreground hover:text-foreground"
+            >
               Sign In
             </Button>
-            <Button className="btn-hero">
-              Get Started
-            </Button>
+            <Button className="btn-hero">Get Started</Button>
           </div>
-          
+
           {/* Mobile Menu Button */}
           <button
             className="md:hidden p-2 text-muted-foreground hover:text-foreground"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
           </button>
         </div>
       </div>
-      
+
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="md:hidden bg-card/95 backdrop-blur-xl border-b border-border/50">
@@ -73,12 +78,13 @@ export const Navigation = () => {
                 </a>
               ))}
               <div className="pt-4 space-y-3">
-                <Button variant="ghost" className="w-full justify-center">
+                <Button
+                  variant="ghost"
+                  className="text-muted-foreground hover:text-foreground w-full"
+                >
                   Sign In
                 </Button>
-                <Button className="btn-hero w-full">
-                  Get Started
-                </Button>
+                <Button className="btn-hero w-full">Get Started</Button>
               </div>
             </div>
           </div>
